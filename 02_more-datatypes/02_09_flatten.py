@@ -11,14 +11,5 @@
 
 starter_list = [[1, 2, 3, 4], [5, 6], [7, 8, 9]]
 
-# Easier to convert to set to use set operations
-# try indexing lists
-a = {starter_list[0]} # TypeError: unhashable type: 'list'
-b = {starter_list[1]}
-c = {starter_list[2]}
-
-# Use union to concatenate lists
-flatten = a|b|c
-
-# Convert to list and returned flattened version
-print (list(flatten))
+# Using list comprehension instead 
+print([i for j in starter_list for i in j])
