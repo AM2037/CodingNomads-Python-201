@@ -4,3 +4,9 @@
 
 s = {1, 2, 3, 4}
 t = {3, 4, 5, 6}
+
+# Create intersection
+print(s&t)
+
+# Create union
+print(s|t)
