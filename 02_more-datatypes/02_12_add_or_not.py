@@ -28,8 +28,12 @@ while True:
             break
         # If could be converted to int continue loop
         num_.add(num)
+    # TODO: Loop not stopping when length of the set reaches 10 -- FIX
+    elif (len(num_) > 10): 
+        print("Congratulations, the set is larger than 10 numbers so you WIN!")
+        break
     elif (points == 0):
-        # TODO: losing eventually works but continues one entry after loss -- FIX
+        # TODO: Figure out why game keeps going until points reach 0 even if you win
         print("Uh oh, you lost!")
         break
     else:
@@ -40,11 +44,6 @@ while True:
     # Continue loop until 5 points have been deducted
     continue
 
-# Decide winners
-for i in num_:
-    # TODO: Also resolve TypeError below
-    if i > 10: # TypeError: '>' not supported between instances of 'str' and 'int'
-        print("Congratulations, the set is larger than 10 numbers so you WIN!")
 
 # Verify number of items in set
 print(num_)
