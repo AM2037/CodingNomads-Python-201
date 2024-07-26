@@ -4,3 +4,7 @@
 # 2. Use a loop and a second list to solve it more manually
 
 list_ = [1, 2, 3, 4, 3, 4, 5]
+
+# List → set to preserve only uniques aka first approach
+uniques = set(list_)
+print(uniques)
