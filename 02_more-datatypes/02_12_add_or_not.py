@@ -13,12 +13,15 @@ num_ = set()
 # Initialize duplicate number count
 points = 5
 
+# Set rules for adding user's number inputs to the set or not
 while True:
     # Prompt user for number
     num = input("Please enter number here: ")
 
     # Rules for adding numbers to set
-    if (num not in num_) and (points!=0):
+    # if (num not in num_) and (points!=0): # Refactoring this line to see if it fixes 
+    # the only stopping after 0 points instead of winning
+    if (num not in num_):
         # Syntax similar to append: set.add(elem)
         # try except to catch errors aka can't be converted
         try:
@@ -26,16 +29,8 @@ while True:
         except TypeError:
             print(f"{num} could not be converted to int.")
             break
-        # If could be converted to int continue loop
+        # Continue loop if num can be converted to int
         num_.add(num)
-    # TODO: Loop not stopping when length of the set reaches 10 -- FIX
-    elif (len(num_) > 10): 
-        print("Congratulations, the set is larger than 10 numbers so you WIN!")
-        break
-    elif (points == 0):
-        # TODO: Figure out why game keeps going until points reach 0 even if you win
-        print("Uh oh, you lost!")
-        break
     else:
         # Prevent duplicate entries
         print("This number already exists in the set.")
@@ -44,6 +39,14 @@ while True:
     # Continue loop until 5 points have been deducted
     continue
 
+# TODO: Moving this section (lines 42-49) out from earlier loop broke winning/losing altogether -- FIX
+# Determine losers
+if (points == 0):
+    print("Uh oh, you lost!")
+
+# Determine winners
+if (len(num_) > 10): 
+    print("Congratulations, the set is larger than 10 numbers so you WIN!")
 
 # Verify number of items in set
 print(num_)
