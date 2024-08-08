@@ -4,3 +4,15 @@
 #
 # user_input = "hello"
 # result = {"h": 1, "e": 1, "l": 2, "o": 1}
+
+from collections import Counter
+
+user_input = str(input("What's your favorite color?: "))
+
+# Split word(s) into letters
+letters = [*user_input]
+print(letters)
+
+# Get frequency of each letter
+Counter = Counter(letters)
+print(dict(Counter))
