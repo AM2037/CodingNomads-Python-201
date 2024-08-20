@@ -16,3 +16,16 @@ famous_quotes = [
     {"full_name": "Nathan Myhrvold", "quote": "Software is a gas; it expands to fill its container."},
     {"full_name": "Alan Bennett", "quote": "Standards are always out of date.  That’s what makes them standards."}
 ]
+
+# Convert to string values instead of lists to printable
+for dict in famous_quotes:
+    names = [dict['full_name'].split() for dict in famous_quotes]
+    # Access dictionary quotes
+    quote = dict["quote"]
+
+    # Access first and last names only, ignoring middle
+    last = dict["full_name"].split()[-1]
+    first = dict["full_name"].split()[0]
+
+    # Print correctly formatted quotes
+    print(f"\"{quote}\" - {last}, {first}")
