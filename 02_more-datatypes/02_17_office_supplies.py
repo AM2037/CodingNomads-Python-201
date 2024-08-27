@@ -36,7 +36,4 @@ for dict in office:
     # Figure out length of longest name(s) with punctuation
     full_name = last + "," + " " + first
     formatted_names.append(full_name)
-
-# Find longest name in formatted_names list
-longest = max(formatted_names, key=len)
-print(len(longest))
+    print(f"{full_name:30s} {item}")
