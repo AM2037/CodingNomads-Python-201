@@ -12,8 +12,22 @@
 # Note: This lab might be challenging! Make sure to discuss it 
 # with your mentor or chat about it on our forum.
 
-from resources import randlist
+import random
 
-print(randlist)
+list_length = random.randint(1, 20)
+randlist = list()
+for i in range(list_length):
+    randlist.append(random.randint(1, 100))
 
-# Write your code below here
+# Sort numbers
+sorted_nums = sorted(randlist)
+
+# Use string slicing notation to group numbers into pairs and print results
+tups = list(zip(sorted_nums[::2],sorted_nums[1::2]))
+print(tups)
+
+    
+
+
+
+
