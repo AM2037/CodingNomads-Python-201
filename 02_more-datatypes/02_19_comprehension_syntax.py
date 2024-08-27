@@ -6,3 +6,6 @@
 # but try to do it using a list comprehension.
 
 word = "codingnomads"
+
+letters = [word.split() for word in word]
+print(letters)
