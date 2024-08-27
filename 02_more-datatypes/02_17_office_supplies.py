@@ -22,3 +22,21 @@ office = [
     {"full_name": "Creed Bratton", "item": "mung beans"},
     {"full_name": "Darryl Philbin", "item": "forklift"},
 ]
+
+formatted_names = []
+
+for dict in office:
+    # Access items
+    item = dict["item"]
+
+    # Access first and last names
+    last = dict["full_name"].split()[-1]
+    first = dict["full_name"].split()[0]
+
+    # Figure out length of longest name(s) with punctuation
+    full_name = last + "," + " " + first
+    formatted_names.append(full_name)
+
+# Find longest name in formatted_names list
+longest = max(formatted_names, key=len)
+print(len(longest))
